@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Longman Academic Writing 2 — Chapter 2: Listing-Order Paragraphs (pp. 35–47)</title>
+<style>
+  :root{
+    --navy:#1c2b5e;
+    --maroon:#6d1f3a;
+    --gold:#d8a83e;
+    --tan:#e3d2bf;
+    --paleblue:#cfe2f0;
+    --palegreen:#dfe8d0;
+    --ink:#1a1a1a;
+    --base-zoom:1.2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Georgia','Cambria',serif;
+    color:var(--ink);
+    background:#f7f5f0;
+    width:100%;
+    max-width:calc(50vw + 450px);
+    margin:0 auto;
+    padding-top:64px;
+    padding-bottom:80px;
+    font-size:calc(16px * var(--base-zoom) * var(--zoom,1));
+  }
+  h1,h2,h3{font-family:'Helvetica Neue',Arial,sans-serif;}
+
+  /* ===== Top nav ===== */
+  #topnav{
+    position:fixed; top:0; left:0; right:0;
+    background:var(--navy); color:#fff; z-index:1000;
+    display:flex; flex-wrap:wrap; align-items:center;
+    padding:6px 10px; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:13px; box-shadow:0 2px 6px rgba(0,0,0,.3);
+  }
+  #topnav .label{font-weight:bold; margin-right:6px; color:var(--gold);}
+  #topnav a{
+    color:#fff; text-decoration:none; padding:4px 9px; border-radius:3px;
+    background:rgba(255,255,255,.08); white-space:nowrap;
+  }
+  #topnav a:hover{background:rgba(255,255,255,.25);}
+  #topnav .sep{width:1px; background:rgba(255,255,255,.3); align-self:stretch; margin:0 4px;}
+  #pagenav{display:flex; gap:4px; flex-wrap:wrap;}
+  #pagenav a{padding:3px 7px; font-size:12px; background:rgba(255,255,255,.08);}
+
+  /* ===== Zoom controls ===== */
+  #zoomctl{
+    position:fixed; left:8px; top:90px; z-index:1000;
+    display:flex; flex-direction:column; gap:6px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+  }
+  #zoomctl button{
+    width:40px; height:40px; border-radius:50%; border:none;
+    background:var(--maroon); color:#fff; font-size:18px; font-weight:bold;
+    cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,.3);
+  }
+  #zoomctl button:hover{background:var(--gold); color:var(--ink);}
+  #zoomlabel{
+    text-align:center; font-size:11px; background:#fff; border-radius:10px;
+    padding:2px 0; box-shadow:0 1px 3px rgba(0,0,0,.2);
+  }
+
+  /* ===== Highlighter / Eraser controls ===== */
+  #markctl{
+    display:flex; flex-direction:column; gap:6px; margin-top:14px;
+  }
+  #markctl .divider{height:1px; background:rgba(0,0,0,.15); margin:2px 4px;}
+  .mark-btn{
+    width:40px; height:40px; border-radius:50%; border:none;
+    font-size:16px; font-weight:bold; cursor:pointer;
+    box-shadow:0 2px 5px rgba(0,0,0,.3);
+    display:flex; align-items:center; justify-content:center;
+  }
+  #highlightBtn{background:#fff3a0; color:#5a4a00;}
+  #highlightBtn:hover{background:#ffe066;}
+  #highlightBtn.active{box-shadow:0 0 0 3px var(--maroon), 0 2px 5px rgba(0,0,0,.3);}
+  #eraserBtn{background:#e8e8e8; color:#444;}
+  #eraserBtn:hover{background:#d0d0d0;}
+  #eraserBtn.active{box-shadow:0 0 0 3px var(--maroon), 0 2px 5px rgba(0,0,0,.3);}
+
+  mark.user-highlight{background:#fff59d; padding:0 1px; border-radius:2px;}
+  body.erase-mode mark.user-highlight{cursor:pointer;}
+  body.highlight-mode{cursor:text;}
+
+  /* ===== Page anchors / page chip ===== */
+  .pagechip{
+    display:inline-block; background:#444; color:#fff; font-size:11px;
+    font-family:'Helvetica Neue',Arial,sans-serif; padding:2px 8px; border-radius:0 0 6px 6px;
+    margin:28px 0 -1px 0; letter-spacing:.05em;
+  }
+
+  /* ===== Section headers (major, dark filled bar) ===== */
+  .section-bar{
+    background:var(--maroon); color:#fff; padding:8px 14px;
+    font-size:1.35em; font-weight:bold; letter-spacing:.03em;
+    border-bottom:4px solid var(--gold); margin:30px 0 14px 0;
+  }
+  .section-bar.alt{background:#1a1a1a;}
+
+  /* ===== Subheads (lighter, text + gold underline, e.g. Clustering, Looking at the Model) ===== */
+  .subhead2{
+    font-weight:bold; font-size:1.15em; color:var(--maroon); letter-spacing:.02em;
+    border-bottom:3px solid var(--gold); padding-bottom:5px; margin:26px 0 12px 0;
+    font-family:'Helvetica Neue',Arial,sans-serif; text-transform:uppercase;
+  }
+  .subhead{
+    font-weight:bold; font-size:1.05em; margin:16px 0 6px 0; color:var(--maroon);
+  }
+  .subhead-bar{background:#1a1a1a; color:#fff; padding:6px 10px; font-weight:bold; margin:18px 0 8px 0; font-family:'Helvetica Neue',Arial,sans-serif;}
+
+  /* ===== Writing model box ===== */
+  .model-box{
+    background:#fff; border:1px solid #9aa6c9; padding:16px 20px; margin:14px 0;
+    box-shadow:0 1px 4px rgba(0,0,0,.08); line-height:2;
+  }
+  .model-box h4{text-align:center; margin:0 0 10px 0; font-size:1.15em;}
+
+  /* ===== Practice exercise box ===== */
+  .practice{border:1px solid #ccc; margin:18px 0; padding:0; background:#fff;}
+  .practice-head{display:flex; align-items:center; background:#fff; border-bottom:1px solid #ddd;}
+  .practice-tag{
+    background:var(--navy); color:#fff; font-weight:bold; font-size:.85em;
+    padding:6px 10px; font-family:'Helvetica Neue',Arial,sans-serif; white-space:nowrap;
+  }
+  .practice-title{font-weight:bold; padding:6px 10px; font-family:'Helvetica Neue',Arial,sans-serif;}
+  .practice-body{padding:12px 16px;}
+
+  /* ===== Table (characteristics / vocab reference) ===== */
+  table.signals{width:100%; border-collapse:collapse; margin:10px 0;}
+  table.signals th{background:var(--navy); color:#fff; padding:6px 10px; text-align:left; font-family:'Helvetica Neue',Arial,sans-serif;}
+  table.signals td{background:var(--paleblue); border-bottom:1px solid #fff; padding:6px 10px; vertical-align:top;}
+
+  /* ===== Inline fill-in-the-blank mechanism ===== */
+  .num{font-size:.68em; vertical-align:super; color:#555; margin:0 2px; line-height:0;}
+  .blank-ph{
+    display:inline-block; border-bottom:1.5px solid #333; width:140px;
+    height:1em; vertical-align:-3px; margin:0 3px;
+  }
+  .ans-ph{display:none; font-weight:bold; color:#c0392b; margin:0 3px;}
+  .ans-ph.model-style{color:#1d4f91;}
+  .given-text{font-weight:bold; color:#1d4f91;}
+  .exwrap.revealed .blank-ph{display:none;}
+  .exwrap.revealed .ans-ph{display:inline;}
+
+  /* Block-style blank/answer line (full-width topic-sentence write-in) */
+  .blank-ph-line{display:block; width:100%; margin-bottom:6px;}
+  .ans-ph-line{margin-bottom:6px;}
+  .exwrap.revealed .ans-ph-line{display:block;}
+
+  /* ===== Topic / Controlling-idea marking (Practice 3, 4, 5) ===== */
+  .t-topic{border:2px solid transparent; border-radius:12px; padding:0 3px;}
+  .t-ci{}
+  .exwrap.revealed .t-topic, .revealtarget.revealed .t-topic{border-color:#c0392b;}
+  .exwrap.revealed .t-ci, .revealtarget.revealed .t-ci{text-decoration:underline; text-decoration-color:#c0392b; text-decoration-thickness:2px; text-underline-offset:3px;}
+  .given-topic{border:2px solid #1d4f91; border-radius:12px; padding:0 3px; font-weight:bold; color:#1d4f91;}
+  .given-ci{text-decoration:underline; text-decoration-color:#1d4f91; text-decoration-thickness:2px; text-underline-offset:3px; font-weight:bold; color:#1d4f91;}
+
+  /* ===== Intensifier marking in the writing model (Practice 2A) ===== */
+  .intens-word{}
+  .intens-mod{border-radius:10px; padding:0 3px;}
+  #model38.revealed .intens-word{text-decoration:underline; text-decoration-color:#c0392b; text-decoration-thickness:2px; text-underline-offset:2px; font-weight:bold; color:#c0392b;}
+  #model38.revealed .intens-mod{border:2px solid #c0392b;}
+  .given-intens-word{text-decoration:underline; text-decoration-color:#1d4f91; text-decoration-thickness:2px; text-underline-offset:2px; font-weight:bold; color:#1d4f91;}
+  .given-intens-mod{border:2px solid #1d4f91; border-radius:10px; padding:0 3px; font-weight:bold; color:#1d4f91;}
+
+  /* ===== Multiple-choice option letters (Practice 5) ===== */
+  .opts{margin:6px 0 0 0;}
+  .optline{margin:3px 0;}
+  .optlbl{display:inline-block; min-width:1.6em;}
+  .exwrap.revealed .optlbl.correct-opt, .revealtarget.revealed .optlbl.correct-opt{
+    border:2px solid #c0392b; border-radius:50%; padding:0 6px; color:#c0392b; font-weight:bold;
+  }
+  .given-optlbl{border:2px solid #1d4f91; border-radius:50%; padding:0 6px; color:#1d4f91; font-weight:bold;}
+
+  /* ===== Answer toggle button ===== */
+  .btnrow{display:flex; justify-content:flex-end; margin-top:10px;}
+  .ans-btn{
+    background:var(--gold); border:none; padding:6px 14px; font-weight:bold; cursor:pointer;
+    border-radius:4px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:.85em;
+  }
+  .ans-btn:hover{background:var(--maroon); color:#fff;}
+
+  /* ===== Images ===== */
+  .cluster-img{max-width:82%; display:block; margin:14px auto;}
+  .intens-img{max-width:100%; display:block; margin:10px auto;}
+  .sandwich-img{max-width:50%; display:block; margin:14px auto;}
+  .diagram-img{max-width:90%; display:block; margin:14px auto;}
+  .photo-side{float:right; max-width:36%; margin:0 0 10px 18px; border:1px solid #ccc;}
+  figure{margin:0;}
+  figcaption{font-style:italic; font-size:.82em; text-align:center; color:#555; margin-top:4px;}
+
+  .clearfix::after{content:""; display:block; clear:both;}
+  p{line-height:1.55;}
+  ul,ol{line-height:1.55;}
+</style>
+</head>
+<body>
+
+<div id="topnav">
+  <span class="label">Sections:</span>
+  <a href="#sec-intro">Introduction</a>
+  <a href="#sec-prewriting">Prewriting</a>
+  <a href="#sec-listing">Listing-Order Paragraphs</a>
+  <a href="#sec-organization">Organization</a>
+  <div class="sep"></div>
+  <span class="label">Pages:</span>
+  <div id="pagenav">
+    <a href="#page-35">35</a><a href="#page-36">36</a><a href="#page-37">37</a>
+    <a href="#page-38">38</a><a href="#page-39">39</a><a href="#page-40">40</a>
+    <a href="#page-41">41</a><a href="#page-42">42</a><a href="#page-43">43</a>
+    <a href="#page-44">44</a><a href="#page-45">45</a><a href="#page-46">46</a><a href="#page-47">47</a>
+  </div>
+</div>
+
+<div id="zoomctl">
+  <button id="zoomIn">A+</button>
+  <div id="zoomlabel">100%</div>
+  <button id="zoomOut">A−</button>
+  <div id="markctl">
+    <div class="divider"></div>
+    <button id="highlightBtn" class="mark-btn" title="Highlighter — select text to highlight it">🖊</button>
+    <button id="eraserBtn" class="mark-btn" title="Eraser — click a highlight to remove it">⌫</button>
+  </div>
+</div>
+
+<!-- ============ PAGE 35 ============ -->
+<div id="page-35"></div><span class="pagechip">PAGE 35</span>
+
+<div id="sec-intro" class="section-bar">INTRODUCTION</div>
+<p>You learned in Chapter 1 that a paragraph is a group of sentences about one topic. A paragraph should have three main parts: a topic sentence, supporting sentences (the body), and a concluding sentence.</p>
+<p>In this chapter, you will study each of these parts in more detail. You will also work with and then write paragraphs that use an organization pattern known as listing order. Then you will learn about compound sentences to help you combine your ideas more effectively.</p>
+<p>To help you get ideas for your paragraphs, you will first do some prewriting.</p>
+
+<div id="sec-prewriting" class="section-bar">PREWRITING</div>
+<p>There are many different prewriting techniques that you can use to get ideas to write about. In this chapter you will use clustering.</p>
+
+<div class="subhead2">Clustering</div>
+<p><strong>Clustering</strong> is a prewriting technique that allows you to brainstorm and develop your ideas with the help of a diagram called a <strong>cluster</strong>. Here is how to do it.</p>
+<p>Begin by writing your topic in the middle of your paper. Draw a circle around it. Then think of ideas related to the topic. Write words or short phrases in circles around the topic and connect them with lines to the main circle. Write down every idea that comes into your mind. Don't stop to worry if an idea is a good one or not.</p>
+
+<figure>
+  <img class="cluster-img" src="media/p35_cluster1.png" alt="Cluster 1: a diagram with &quot;Good Flight Attendants&quot; in the center circle, connected to circles reading friendly, foreign languages, self-confident, like to travel, physically strong, and a lot of training">
+</figure>
+
+<!-- ============ PAGE 36 ============ -->
+<div id="page-36"></div><span class="pagechip">PAGE 36</span>
+
+<p>Next, think about the word or phrase in each circle, and add ideas that are related to it. As before, draw circles around each idea and draw lines to connect the ideas. From these clusters, or groups of circles, you can begin to see which ideas to use and which to delete. Keep the clusters that have the most circles, and cross out the ones that didn't produce related ideas.</p>
+
+<figure>
+  <img class="cluster-img" src="media/p36_cluster2.png" alt="Cluster 2: the same diagram expanded further, with foreign languages and a lot of training and like to travel crossed out, and new circles added: can calm nervous passengers, explain noises, heavy carts, heavy doors, give orders to passengers, get passengers to sit down, and emergencies">
+</figure>
+
+<p>Later in the chapter, you will look at another prewriting technique that will help you further organize and develop your ideas after you get them down on paper in a cluster (see Outlining on page 56).</p>
+
+<!-- ============ PAGE 37 ============ -->
+<div id="page-37"></div><span class="pagechip">PAGE 37</span>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 1</span>
+    <span class="practice-title">Using Clustering to Get Ideas</span>
+  </div>
+  <div class="practice-body">
+    <p><strong>A</strong> Create a cluster for a job you have or would like to have. Use the chart to give you ideas about the characteristics and abilities that the job requires.</p>
+    <table class="signals">
+      <tr><th colspan="3" style="text-align:center;">Characteristics and Abilities</th></tr>
+      <tr><th>Adjectives</th><th>Nouns</th><th>Phrases</th></tr>
+      <tr><td>creative</td><td>creativity</td><td>can give clear instructions</td></tr>
+      <tr><td>dedicated</td><td>dedication</td><td>can manage people well</td></tr>
+      <tr><td>dependable</td><td>dependability</td><td>has good communication skills</td></tr>
+      <tr><td>enthusiastic</td><td>enthusiasm</td><td>is a good public speaker</td></tr>
+      <tr><td>friendly</td><td>friendliness</td><td>is good at math</td></tr>
+      <tr><td>intelligent</td><td>intelligence</td><td>is willing to work hard</td></tr>
+      <tr><td>knowledgeable</td><td>knowledge</td><td>likes traveling</td></tr>
+      <tr><td>organized</td><td>organization</td><td>works well with children</td></tr>
+      <tr><td>patient</td><td>patience</td><td>works well with coworkers</td></tr>
+      <tr><td>self-confident</td><td>self-confidence</td><td>writes well</td></tr>
+    </table>
+    <p><strong>B</strong> Share your cluster with a partner. Discuss ways to expand it. Then talk about which ideas you might want to cut out. You will use this cluster in the Try It Out! activity on page 57.</p>
+  </div>
+</div>
+
+<div id="sec-listing" class="section-bar">LISTING-ORDER PARAGRAPHS</div>
+<p>Organization is one of the most important writing skills. A well-organized paragraph is easy to read and understand because the ideas are in a recognizable pattern. Listing order is one of the patterns that writers often use in English. In a listing-order paragraph, you divide the topic into separate points. In the paragraph, you discuss one point, then another point, then a third point, and so on.</p>
+<p>There are three keys to writing a listing-order paragraph:</p>
+<ul>
+  <li>Begin with a topic sentence that names the topic and says it has several points.</li>
+  <li>Write about (or list) each point separately.</li>
+  <li>End with a concluding sentence that reminds the reader about the points just discussed.</li>
+</ul>
+
+<!-- ============ PAGE 38 ============ -->
+<div id="page-38"></div><span class="pagechip">PAGE 38</span>
+
+<div class="subhead2">Looking at the Model</div>
+<p>The writing model is about qualities that good flight attendants have.</p>
+<p><strong>Work with a partner or in a small group. Read the model. Then answer the questions.</strong></p>
+<p><strong>✎ Writing Model</strong></p>
+
+<div class="model-box" id="model38">
+  <h4>Good Flight Attendants</h4>
+  <p>
+  Good flight attendants have three important characteristics. First of all, they are <span class="given-intens-word">very</span> <span class="given-intens-mod">friendly</span>. They enjoy greeting passengers and making them feel comfortable. Sometimes passengers are <span class="intens-word">quite</span> <span class="intens-mod">afraid</span> of flying. Friendly flight attendants are good at talking to them and helping them feel calm. For example, they can explain strange noises made by the aircraft. Second, good flight attendants are self-confident. They can give clear instructions to passengers, and they must be <span class="intens-word">rather</span> <span class="intens-mod">firm</span> so that passengers obey them. This characteristic is <span class="intens-word">especially</span> <span class="intens-mod">important</span> in emergencies. Third, good flight attendants are <span class="intens-word">fairly</span> <span class="intens-mod">strong</span>. They have to push heavy carts of food and drinks up and down the aisles. They also have to open and close the airplane's <span class="intens-word">extremely</span> <span class="intens-mod">heavy</span> doors. In short, good flight attendants are friendly, self-confident, and strong.
+  </p>
+</div>
+
+<div class="exwrap">
+  <div class="subhead">Questions about the Model</div>
+  <ol>
+    <li>Look at the title. What is the topic of the paragraph? <span class="blank-ph" style="width:200px;"></span><span class="ans-ph">The topic is flight attendants.</span></li>
+    <li>Look at the first sentence. What does it say about the topic? <span class="blank-ph" style="width:100%; max-width:420px;"></span><span class="ans-ph">It says that good flight attendants have three important characteristics.</span></li>
+    <li>How many characteristics should the reader look for in this paragraph? What are they? <span class="blank-ph" style="width:100%; max-width:420px;"></span><span class="ans-ph">Three. The characteristics are (1) friendly, (2) self-confident, and (3) strong.</span></li>
+    <li>What information does the last sentence repeat? <span class="blank-ph" style="width:100%; max-width:420px;"></span><span class="ans-ph">It repeats the three characteristics.</span></li>
+  </ol>
+  <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+</div>
+
+<div class="subhead2" style="margin-top:22px;">✎ Looking at Vocabulary: Intensifiers</div>
+<p>We can describe how strong a characteristic is by using words like <strong>very</strong> and <strong>extremely</strong>.</p>
+<table class="signals" style="background:none;">
+  <tr><td style="background:none;">He is a <strong>very</strong> hard worker.</td><td style="background:none;">They are <strong>exceptionally</strong> skilled.</td></tr>
+  <tr><td style="background:none;">She is <strong>fairly</strong> good at the job.</td><td style="background:none;">We are <strong>quite</strong> sure about it.</td></tr>
+</table>
+
+<!-- ============ PAGE 39 ============ -->
+<div id="page-39"></div><span class="pagechip">PAGE 39</span>
+
+<p>These words are known as <strong>intensifiers</strong> because they intensify (or strengthen) the meaning of the words they describe. The diagram shows the relative weakness and strength of these intensifiers:</p>
+
+<figure>
+  <img class="intens-img" src="media/p39_intensifiers.png" alt="Intensifiers diagram, from weaker to stronger: fairly, rather, quite, very, especially, extremely">
+</figure>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 2</span>
+    <span class="practice-title">Looking at Intensifiers</span>
+  </div>
+  <div class="practice-body">
+
+    <div class="exwrap">
+      <p><strong>A</strong> Look at the intensifiers in the diagram above. Find and underline them in the writing model. Then circle the word that each one intensifies.</p>
+      <p style="margin-left:20px;">First of all, they are <span class="given-intens-word">very</span> <span class="given-intens-mod">friendly</span>.</p>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleTarget('model38', this)">Show Answers</button></div>
+    </div>
+
+    <div class="exwrap">
+      <p><strong>B</strong> Use a variety of intensifiers from the diagram above to complete these sentences about yourself.</p>
+      <ol>
+        <li>I am <span class="given-text">very</span> creative.</li>
+        <li>I am <span class="blank-ph"></span><span class="ans-ph model-style">rather</span> talkative.</li>
+        <li>I am <span class="blank-ph"></span><span class="ans-ph model-style">quite</span> organized.</li>
+        <li>I am <span class="blank-ph"></span><span class="ans-ph model-style">very</span> funny.</li>
+        <li>I am <span class="blank-ph"></span><span class="ans-ph model-style">extremely</span> strong.</li>
+        <li>I am <span class="blank-ph"></span><span class="ans-ph model-style">fairly</span> patient.</li>
+        <li>I am <span class="blank-ph"></span><span class="ans-ph model-style">especially</span> good at cooking.</li>
+        <li>I am <span class="blank-ph"></span><span class="ans-ph model-style">quite</span> good at math.</li>
+      </ol>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+    </div>
+
+    <div class="exwrap">
+      <p><strong>C</strong> Discuss your sentences from Part B with a partner. Give examples of each characteristic you describe.</p>
+      <ol>
+        <li>I am very creative. I want to be a graphic designer someday. I love to paint and draw in my spare time.</li>
+        <li>I am rather talkative.<span class="ans-ph model-style"> I enjoy meeting new people, and I can talk with my classmates for hours after class.</span></li>
+        <li>I am extremely strong.<span class="ans-ph model-style"> I go to the gym every morning, and I can carry heavy boxes without any help.</span></li>
+      </ol>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ PAGE 40 ============ -->
+<div id="page-40"></div><span class="pagechip">PAGE 40</span>
+
+<div id="sec-organization" class="section-bar">ORGANIZATION</div>
+<p>In Chapter 1, you learned that a paragraph has three parts: a topic sentence, supporting sentences, and a concluding sentence. Now you will study each part of a paragraph in more detail.</p>
+
+<div class="subhead2">The Topic Sentence</div>
+<p>The most important sentence in a paragraph is the <strong>topic sentence</strong>. It is called the topic sentence because it tells readers what the main idea of the paragraph is. In other words, it tells readers what they are going to read about. The topic sentence is usually the first sentence in a paragraph. It is the top piece of bread in our paragraph "sandwich."</p>
+
+<figure>
+  <img class="sandwich-img" src="media/p40_sandwich.png" alt="A sandwich diagram with an arrow labeled TOPIC SENTENCE pointing to the top slice of bread">
+</figure>
+
+<p>A topic sentence has two parts: 1) a <strong>topic</strong>, which tells what the paragraph will be about, and 2) a <strong>controlling idea</strong>, which tells what the paragraph will say about the topic. It tells the reader: This paragraph will discuss these things—and only these things—about this topic.</p>
+<p>For example, the topic of the writing model on page 38 is <em>good flight attendants</em>. What will the paragraph say about good flight attendants? The controlling idea tells us: <em>They have three important characteristics.</em> The paragraph will not talk about their uniforms, their training, or their duties. It will only discuss three important characteristics that good flight attendants have.</p>
+<p>Here are examples of topic sentences about English:</p>
+<p style="margin-left:24px;">English is constantly adding new words.<br>English borrows words from other languages.<br>English is necessary for many different jobs.</p>
+<p>Note that the topic in each of these examples is the same (<em>English</em>), but the controlling ideas are different. That means that each paragraph will discuss something very different about English.</p>
+
+<!-- ============ PAGE 41 ============ -->
+<div id="page-41"></div><span class="pagechip">PAGE 41</span>
+
+<p>In the topic sentence, the topic can come before or after the controlling idea:</p>
+
+<figure>
+  <img class="diagram-img" src="media/p41_beforeafter.png" alt="Diagram showing topic-before-controlling-idea and controlling-idea-before-topic patterns, using the examples: English borrows words from other languages / Other languages give words to English, and English is necessary for many different jobs / Many different jobs require English">
+</figure>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 3</span>
+    <span class="practice-title">Analyzing Topic Sentences</span>
+  </div>
+  <div class="practice-body">
+    <p>Look at each group of topic sentences. Circle the topic and underline the controlling idea of each sentence. (You will use these groups of sentences again later.)</p>
+
+    <div class="exwrap">
+      <div class="subhead" style="text-transform:uppercase;">Group 1</div>
+      <ol>
+        <li><span class="given-topic">Good roommates</span> <span class="given-ci">have four characteristics.</span></li>
+        <li><span class="t-topic">College students</span> <span class="t-ci">face many challenges.</span></li>
+        <li><span class="t-topic">Living with your parents</span> <span class="t-ci">has certain advantages.</span></li>
+        <li><span class="t-topic">Successful student athletes</span> <span class="t-ci">have several characteristics.</span></li>
+        <li><span class="t-topic">Small colleges</span> <span class="t-ci">are better than big universities for several reasons.</span></li>
+      </ol>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+
+    <div class="exwrap">
+      <div class="subhead" style="text-transform:uppercase;">Group 2</div>
+      <ol>
+        <li><span class="t-topic">Successful managers</span> <span class="t-ci">share several characteristics.</span></li>
+        <li><span class="t-topic">New teachers</span> <span class="t-ci">must master several skills.</span></li>
+        <li><span class="t-topic">Living with your parents</span> <span class="t-ci">has certain disadvantages.</span></li>
+        <li><span class="t-topic">Good test-takers</span> <span class="t-ci">share several characteristics.</span></li>
+        <li><span class="t-topic">Big universities</span> <span class="t-ci">are better than small ones for three reasons.</span></li>
+      </ol>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 42 ============ -->
+<div id="page-42"></div><span class="pagechip">PAGE 42</span>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 4</span>
+    <span class="practice-title">Recognizing Topic Sentences</span>
+  </div>
+  <div class="practice-body">
+    <p>Find the topic sentence in each paragraph. Circle the topic and underline the controlling idea.</p>
+
+    <div class="exwrap">
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 1</div>
+      <p style="text-align:center;"><strong>Libraries</strong></p>
+      <p><span class="given-topic">Libraries</span> <span class="given-ci">offer people a wide variety of activities.</span> Reading, of course, is one of the main activities. People browse the shelves to find interesting books to borrow, and they also come to read newspapers and magazines. Using computers is another popular activity. People can read articles online or do research. They can also check their email, shop, or contact their friends on social networking sites. Studying is also a popular activity. Many students come to the library after school to do their homework or study for tests. Some libraries even have areas where students can study together and talk quietly. Indeed, libraries are for much more than simply reading books.</p>
+
+      <div class="clearfix">
+        <img class="photo-side" src="media/p42_library.png" alt="A librarian showing a plant to a group of young children seated around her">
+        <div class="subhead" style="text-transform:uppercase;">Paragraph 2</div>
+        <p style="text-align:center;"><strong>Libraries</strong></p>
+        <p><span class="t-topic">Libraries</span> <span class="t-ci">are busy from morning until night in my city.</span> In the morning, you can find retired people and others who aren't working. Some come to borrow books, read newspapers and magazines, and use the computers. Others bring their preschool children in order to read to them or to take part in story hours. In the afternoon, students come to the library. They use the computers, do their homework, or work together on assignments. In the evening, the library is also quite busy. People come to relax after work, and families often visit after dinner. In short, people use libraries all day long for a variety of reasons.</p>
+      </div>
+
+      <!-- ============ PAGE 43 ============ -->
+      <div id="page-43"></div><span class="pagechip">PAGE 43</span>
+
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 3</div>
+      <p style="text-align:center;"><strong>Libraries</strong></p>
+      <p><span class="t-ci">A good place to volunteer in your community is</span> <span class="t-topic">a library.</span> First, libraries use volunteers to sort and put books back on the shelves. You can learn how to do this with only a few hours of training. Second, some libraries use volunteers to help people use the computers. You can help people learn how to find information and send emails. In addition, libraries often use volunteers to help out in the children's area. You can lead story hours or help children with special art and reading projects. Finally, libraries use volunteers as tutors. For example, you can volunteer to help students with their homework or become a conversation partner for someone learning English. To sum up, libraries welcome many different kinds of volunteers.</p>
+
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 4</div>
+      <p style="text-align:center;"><strong>Libraries</strong></p>
+      <p><span class="t-ci">Over the past 20 years, many changes have taken place in</span> <span class="t-topic">libraries.</span> First of all, libraries now have computers for people to use. Usually, there is no charge to use the computer for research or for surfing online. Second, there are fewer records, cassette tapes, and video tapes. These have been replaced by CDs and DVDs. In addition, many libraries now have a kiosk where you can check out your books using a computer. Finally, libraries have become more social and community-oriented than they were in the past. They are now places where people come to discuss ideas, learn a craft, study with friends, or join a community group. As our world changes and technology improves, libraries continue to change to meet the needs of the people who use them.</p>
+
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 44 ============ -->
+<div id="page-44"></div><span class="pagechip">PAGE 44</span>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 5</span>
+    <span class="practice-title">Choosing Topic Sentences</span>
+  </div>
+  <div class="practice-body">
+
+    <div class="exwrap">
+      <p><strong>A</strong> Read the paragraphs. Circle the letter of the best topic sentence for each one and write it on the line.</p>
+
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 1</div>
+      <p style="background:#fdf6d8; padding:10px 14px;"><span class="given-text" style="display:block; border-bottom:1.5px solid #333; margin-bottom:6px;">Living in a foreign country has a number of benefits.</span> First, living in a foreign country helps you learn another language faster than studying it at school. Second, you can learn directly about the history, geography, and culture of a country. Third, you become especially knowledgeable about different cultures and different ways of living. Fourth, living in a foreign country makes you appreciate your own country more.</p>
+      <div class="opts">
+        <p class="optline"><span class="optlbl">a.</span> Living in a foreign country helps you learn.</p>
+        <p class="optline"><span class="optlbl">b.</span> Everyone should live in a foreign country for a while.</p>
+        <p class="optline"><span class="optlbl given-optlbl">c.</span> Living in a foreign country has a number of benefits.</p>
+      </div>
+
+      <div class="subhead" style="text-transform:uppercase; margin-top:18px;">Paragraph 2</div>
+      <p style="background:#fdf6d8; padding:10px 14px;"><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line">There are two main types of colleges and universities in the United States.</span> Some colleges and universities in the United States are private. Private colleges and universities do not get money from taxes, so they are usually more expensive. Other colleges and universities are public; that is, the citizens of each state pay some of the costs through their taxes. As a result, public colleges are cheaper for students to attend. No matter which type of college you attend—public or private—you can get a good education.</p>
+      <div class="opts">
+        <p class="optline"><span class="optlbl correct-opt">a.</span> There are two main types of colleges and universities in the United States.</p>
+        <p class="optline"><span class="optlbl">b.</span> Public colleges and universities get money from taxes.</p>
+        <p class="optline"><span class="optlbl">c.</span> There are many colleges and universities in the United States.</p>
+      </div>
+
+      <!-- ============ PAGE 45 ============ -->
+      <div id="page-45"></div><span class="pagechip">PAGE 45</span>
+
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 3</div>
+      <p style="background:#fdf6d8; padding:10px 14px;"><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line">There are several reasons for attending a small college instead of a large university.</span> One reason for choosing a small college is that classes are small. The average class in a small college is 20 students. Another reason is that it is fairly easy to meet with professors. Professors in small colleges have time to help students and are usually happy to do so. In addition, small colleges are friendly, so new students make friends quickly. For these three reasons, small colleges are better than large universities for many students.</p>
+      <div class="opts">
+        <p class="optline"><span class="optlbl">a.</span> Small colleges are friendlier than large universities.</p>
+        <p class="optline"><span class="optlbl correct-opt">b.</span> There are several reasons for attending a small college instead of a large university.</p>
+        <p class="optline"><span class="optlbl">c.</span> You can get an excellent education at a small college.</p>
+      </div>
+
+      <div class="subhead" style="text-transform:uppercase; margin-top:18px;">Paragraph 4</div>
+      <p style="background:#fdf6d8; padding:10px 14px;"><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line">Employers look for three main qualities in their employees.</span> First of all, employers want workers to be dependable. That is, they want workers who come to work every day. Second, employers want workers who are quite responsible. Can the boss give the worker a project to do and know that it will be done well? Third, employers look for workers who can work well with others. The ability to get along with coworkers is extremely important to the success of a business. To summarize, employers look for dependable, responsible team players.</p>
+      <div class="opts">
+        <p class="optline"><span class="optlbl">a.</span> It is difficult to find good employees these days.</p>
+        <p class="optline"><span class="optlbl">b.</span> Employers read job applications very carefully.</p>
+        <p class="optline"><span class="optlbl correct-opt">c.</span> Employers look for three main qualities in their employees.</p>
+      </div>
+
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+
+    <!-- ============ PAGE 46 ============ -->
+    <div id="page-46"></div><span class="pagechip">PAGE 46</span>
+
+    <div class="exwrap">
+      <p><strong>B</strong> Read the paragraphs. Then write a topic sentence for each one.</p>
+
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 1</div>
+      <p style="background:#fdf6d8; padding:10px 14px;"><span class="given-text" style="display:block; border-bottom:1.5px solid #333; margin-bottom:6px;">Colleges and universities in the United States offer several different types of degrees.</span> An associate's degree is given for a two-year program of study. Most students at a community college earn an associate's degree. Students at a four-year college or university earn an undergraduate degree, also called a bachelor of arts (BA) or bachelor of science (BS). Some students continue their studies by doing postgraduate work at a university. After several years, they can receive a graduate degree, such as a master's degree (MA) or a doctorate (Ph.D., doctor in philosophy). In short, there are several types of college degrees in the United States.</p>
+
+      <div class="subhead" style="text-transform:uppercase; margin-top:18px;">Paragraph 2</div>
+      <p style="background:#fdf6d8; padding:10px 14px;"><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line">Good teachers have three main characteristics.</span> First, good teachers know their subject extremely well. That is, a math teacher has advanced education in mathematics, and an English teacher knows a lot about English grammar. Second, good teachers are especially good communicators. This means they know how to present information in ways that students can understand. Third, good teachers are enthusiastic. That is, they can show students that they are interested in their subject and that the subject is quite fun to learn about. To summarize, good teachers have expert knowledge, good communication skills, and enthusiasm for their subject.</p>
+
+      <!-- ============ PAGE 47 ============ -->
+      <div id="page-47"></div><span class="pagechip">PAGE 47</span>
+
+      <div class="subhead" style="text-transform:uppercase; margin-top:18px;">Paragraph 3</div>
+      <p style="background:#fdf6d8; padding:10px 14px;"><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line">There are three kinds of shoppers.</span> The first type of shopper doesn't like to waste time. She knows what she wants to buy and how much she wants to pay. If the store has what she wants, she buys it and leaves. She is a good kind of customer because she doesn't take too much of a salesperson's time. A second type of shopper comes into a store with a general idea of what she wants, listens to the salesperson's suggestions, looks at a few items, and makes a decision. She is also a good kind of customer. A third kind of shopper has no idea what she wants. She spends two hours trying to decide which item to buy. She takes up a lot of a salesperson's time and sometimes doesn't buy anything. In conclusion, the first two types of shoppers are a salesperson's dream, but the third type is a salesperson's nightmare.</p>
+
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleReveal(btn){
+  const box = btn.closest('.exwrap');
+  box.classList.toggle('revealed');
+  const revealed = box.classList.contains('revealed');
+  if(btn.textContent.indexOf('Model Answer') !== -1){
+    btn.textContent = revealed ? 'Hide Model Answer' : 'Show Model Answer';
+  } else {
+    btn.textContent = revealed ? 'Hide Answers' : 'Show Answers';
+  }
+}
+function toggleTarget(targetId, btn){
+  const box = document.getElementById(targetId);
+  box.classList.toggle('revealed');
+  const revealed = box.classList.contains('revealed');
+  btn.textContent = revealed ? 'Hide Answers' : 'Show Answers';
+}
+let zoomLevel = 1;
+function applyZoom(){
+  document.body.style.setProperty('--zoom', zoomLevel);
+  document.getElementById('zoomlabel').textContent = Math.round(zoomLevel*100) + '%';
+}
+document.getElementById('zoomIn').addEventListener('click', ()=>{
+  zoomLevel = Math.min(2, +(zoomLevel + 0.1).toFixed(2));
+  applyZoom();
+});
+document.getElementById('zoomOut').addEventListener('click', ()=>{
+  zoomLevel = Math.max(0.6, +(zoomLevel - 0.1).toFixed(2));
+  applyZoom();
+});
+
+/* ===== Highlighter / Eraser ===== */
+let highlightMode = false;
+let eraseMode = false;
+const highlightBtn = document.getElementById('highlightBtn');
+const eraserBtn = document.getElementById('eraserBtn');
+
+function setHighlightMode(on){
+  highlightMode = on;
+  if(on) eraseMode = false;
+  highlightBtn.classList.toggle('active', highlightMode);
+  eraserBtn.classList.toggle('active', eraseMode);
+  document.body.classList.toggle('highlight-mode', highlightMode);
+  document.body.classList.toggle('erase-mode', eraseMode);
+}
+function setEraseMode(on){
+  eraseMode = on;
+  if(on) highlightMode = false;
+  eraserBtn.classList.toggle('active', eraseMode);
+  highlightBtn.classList.toggle('active', highlightMode);
+  document.body.classList.toggle('erase-mode', eraseMode);
+  document.body.classList.toggle('highlight-mode', highlightMode);
+}
+highlightBtn.addEventListener('click', ()=> setHighlightMode(!highlightMode));
+eraserBtn.addEventListener('click', ()=> setEraseMode(!eraseMode));
+
+function wrapRangeInHighlight(range){
+  const mark = document.createElement('mark');
+  mark.className = 'user-highlight';
+  try{
+    range.surroundContents(mark);
+  }catch(e){
+    const contents = range.extractContents();
+    mark.appendChild(contents);
+    range.insertNode(mark);
+  }
+}
+
+document.addEventListener('mouseup', ()=>{
+  if(!highlightMode) return;
+  const sel = window.getSelection();
+  if(!sel || sel.rangeCount === 0 || sel.isCollapsed) return;
+  // Ignore selections made inside the fixed controls
+  const anchorEl = sel.anchorNode && sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement;
+  if(anchorEl && (anchorEl.closest('#topnav') || anchorEl.closest('#zoomctl'))) return;
+  const range = sel.getRangeAt(0);
+  if(range.collapsed) return;
+  wrapRangeInHighlight(range);
+  sel.removeAllRanges();
+});
+
+document.addEventListener('click', (e)=>{
+  if(!eraseMode) return;
+  const mark = e.target.closest('mark.user-highlight');
+  if(!mark) return;
+  const parent = mark.parentNode;
+  while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+  parent.removeChild(mark);
+  parent.normalize();
+});
+</script>
+</body>
+</html>

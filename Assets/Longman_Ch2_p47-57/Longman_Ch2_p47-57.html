@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Longman Academic Writing 2 — Chapter 2: Listing-Order Paragraphs (pp. 47–57)</title>
+<style>
+  :root{
+    --navy:#1c2b5e;
+    --maroon:#6d1f3a;
+    --gold:#d8a83e;
+    --tan:#e3d2bf;
+    --paleblue:#cfe2f0;
+    --palegreen:#dfe8d0;
+    --ink:#1a1a1a;
+    --base-zoom:1.2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Georgia','Cambria',serif;
+    color:var(--ink);
+    background:#f7f5f0;
+    width:100%;
+    max-width:calc(50vw + 450px);
+    margin:0 auto;
+    padding-top:64px;
+    padding-bottom:80px;
+    font-size:calc(16px * var(--base-zoom) * var(--zoom,1));
+  }
+  h1,h2,h3{font-family:'Helvetica Neue',Arial,sans-serif;}
+
+  /* ===== Top nav ===== */
+  #topnav{
+    position:fixed; top:0; left:0; right:0;
+    background:var(--navy); color:#fff; z-index:1000;
+    display:flex; flex-wrap:wrap; align-items:center;
+    padding:6px 10px; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:13px; box-shadow:0 2px 6px rgba(0,0,0,.3);
+  }
+  #topnav .label{font-weight:bold; margin-right:6px; color:var(--gold);}
+  #topnav a{
+    color:#fff; text-decoration:none; padding:4px 9px; border-radius:3px;
+    background:rgba(255,255,255,.08); white-space:nowrap;
+  }
+  #topnav a:hover{background:rgba(255,255,255,.25);}
+  #topnav .sep{width:1px; background:rgba(255,255,255,.3); align-self:stretch; margin:0 4px;}
+  #pagenav{display:flex; gap:4px; flex-wrap:wrap;}
+  #pagenav a{padding:3px 7px; font-size:12px; background:rgba(255,255,255,.08);}
+
+  /* ===== Zoom controls ===== */
+  #zoomctl{
+    position:fixed; left:8px; top:90px; z-index:1000;
+    display:flex; flex-direction:column; gap:6px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+  }
+  #zoomctl button{
+    width:40px; height:40px; border-radius:50%; border:none;
+    background:var(--maroon); color:#fff; font-size:18px; font-weight:bold;
+    cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,.3);
+  }
+  #zoomctl button:hover{background:var(--gold); color:var(--ink);}
+  #zoomlabel{
+    text-align:center; font-size:11px; background:#fff; border-radius:10px;
+    padding:2px 0; box-shadow:0 1px 3px rgba(0,0,0,.2);
+  }
+
+  /* ===== Highlighter / Eraser controls ===== */
+  #markctl{
+    display:flex; flex-direction:column; gap:6px; margin-top:14px;
+  }
+  #markctl .divider{height:1px; background:rgba(0,0,0,.15); margin:2px 4px;}
+  .mark-btn{
+    width:40px; height:40px; border-radius:50%; border:none;
+    font-size:16px; font-weight:bold; cursor:pointer;
+    box-shadow:0 2px 5px rgba(0,0,0,.3);
+    display:flex; align-items:center; justify-content:center;
+  }
+  #highlightBtn{background:#fff3a0; color:#5a4a00;}
+  #highlightBtn:hover{background:#ffe066;}
+  #highlightBtn.active{box-shadow:0 0 0 3px var(--maroon), 0 2px 5px rgba(0,0,0,.3);}
+  #eraserBtn{background:#e8e8e8; color:#444;}
+  #eraserBtn:hover{background:#d0d0d0;}
+  #eraserBtn.active{box-shadow:0 0 0 3px var(--maroon), 0 2px 5px rgba(0,0,0,.3);}
+
+  mark.user-highlight{background:#fff59d; padding:0 1px; border-radius:2px;}
+  body.erase-mode mark.user-highlight{cursor:pointer;}
+  body.highlight-mode{cursor:text;}
+
+  /* ===== Page anchors / page chip ===== */
+  .pagechip{
+    display:inline-block; background:#444; color:#fff; font-size:11px;
+    font-family:'Helvetica Neue',Arial,sans-serif; padding:2px 8px; border-radius:0 0 6px 6px;
+    margin:28px 0 -1px 0; letter-spacing:.05em;
+  }
+
+  /* ===== Section headers (major, dark filled bar) ===== */
+  .section-bar{
+    background:var(--maroon); color:#fff; padding:8px 14px;
+    font-size:1.35em; font-weight:bold; letter-spacing:.03em;
+    border-bottom:4px solid var(--gold); margin:30px 0 14px 0;
+  }
+  .section-bar.alt{background:#1a1a1a;}
+
+  /* ===== Subheads (lighter, text + gold underline) ===== */
+  .subhead2{
+    font-weight:bold; font-size:1.15em; color:var(--maroon); letter-spacing:.02em;
+    border-bottom:3px solid var(--gold); padding-bottom:5px; margin:26px 0 12px 0;
+    font-family:'Helvetica Neue',Arial,sans-serif; text-transform:uppercase;
+  }
+  .subhead{
+    font-weight:bold; font-size:1.05em; margin:16px 0 6px 0; color:var(--maroon);
+  }
+  .subhead-bar{background:#1a1a1a; color:#fff; padding:6px 10px; font-weight:bold; margin:18px 0 8px 0; font-family:'Helvetica Neue',Arial,sans-serif;}
+
+  /* ===== Writing model box ===== */
+  .model-box{
+    background:#fff; border:1px solid #9aa6c9; padding:16px 20px; margin:14px 0;
+    box-shadow:0 1px 4px rgba(0,0,0,.08); line-height:2;
+  }
+  .model-box h4{text-align:center; margin:0 0 10px 0; font-size:1.15em;}
+
+  /* ===== Practice exercise box ===== */
+  .practice{border:1px solid #ccc; margin:18px 0; padding:0; background:#fff;}
+  .practice-head{display:flex; align-items:center; background:#fff; border-bottom:1px solid #ddd;}
+  .practice-tag{
+    background:var(--navy); color:#fff; font-weight:bold; font-size:.85em;
+    padding:6px 10px; font-family:'Helvetica Neue',Arial,sans-serif; white-space:nowrap;
+  }
+  .practice-title{font-weight:bold; padding:6px 10px; font-family:'Helvetica Neue',Arial,sans-serif;}
+  .practice-body{padding:12px 16px;}
+
+  /* ===== Table (transition signals / concluding signals) ===== */
+  table.signals{width:100%; border-collapse:collapse; margin:10px 0;}
+  table.signals th{background:var(--navy); color:#fff; padding:6px 10px; text-align:left; font-family:'Helvetica Neue',Arial,sans-serif;}
+  table.signals td{background:var(--paleblue); border-bottom:1px solid #fff; padding:6px 10px; vertical-align:top;}
+
+  /* ===== Inline fill-in-the-blank mechanism ===== */
+  .num{font-size:.68em; vertical-align:super; color:#555; margin:0 2px; line-height:0;}
+  .blank-ph{
+    display:inline-block; border-bottom:1.5px solid #333; width:140px;
+    height:1em; vertical-align:-3px; margin:0 3px;
+  }
+  .ans-ph{display:none; font-weight:bold; color:#c0392b; margin:0 3px;}
+  .ans-ph.model-style{color:#1d4f91;}
+  .given-text{font-weight:bold; color:#1d4f91;}
+  .exwrap.revealed .blank-ph{display:none;}
+  .exwrap.revealed .ans-ph{display:inline;}
+
+  /* Block-style blank/answer line (full-width topic-sentence write-in) */
+  .blank-ph-line{display:block; width:100%; margin-bottom:6px;}
+  .ans-ph-line{margin-bottom:6px;}
+  .exwrap.revealed .ans-ph-line{display:block;}
+
+  /* ===== Topic / Controlling-idea marking ===== */
+  .t-topic{border:2px solid transparent; border-radius:12px; padding:0 3px;}
+  .t-ci{}
+  .exwrap.revealed .t-topic, .revealtarget.revealed .t-topic{border-color:#c0392b;}
+  .exwrap.revealed .t-ci, .revealtarget.revealed .t-ci{text-decoration:underline; text-decoration-color:#c0392b; text-decoration-thickness:2px; text-underline-offset:3px;}
+  .given-topic{border:2px solid #1d4f91; border-radius:12px; padding:0 3px; font-weight:bold; color:#1d4f91;}
+  .given-ci{text-decoration:underline; text-decoration-color:#1d4f91; text-decoration-thickness:2px; text-underline-offset:3px; font-weight:bold; color:#1d4f91;}
+
+  /* ===== Strikethrough for irrelevant sentences ===== */
+  .exwrap.revealed .t-irrelevant{text-decoration:line-through; text-decoration-color:#c0392b; text-decoration-thickness:2px; color:#8a8a8a;}
+  .given-irrelevant{text-decoration:line-through; text-decoration-color:#1d4f91; text-decoration-thickness:2px; color:#5c6a86;}
+
+  /* ===== Editing-mistake correction marks (strike wrong text, show fix) ===== */
+  .err-fix{display:none; color:#c0392b; font-weight:bold; margin-left:4px;}
+  .exwrap.revealed .err-wrong{text-decoration:line-through; text-decoration-color:#c0392b; text-decoration-thickness:2px; color:#8a8a8a;}
+  .exwrap.revealed .err-fix{display:inline;}
+
+  /* ===== Multiple-choice option letters ===== */
+  .opts{margin:6px 0 0 0;}
+  .optline{margin:3px 0;}
+  .optlbl{display:inline-block; min-width:1.6em;}
+  .exwrap.revealed .optlbl.correct-opt, .revealtarget.revealed .optlbl.correct-opt{
+    border:2px solid #c0392b; border-radius:50%; padding:0 6px; color:#c0392b; font-weight:bold;
+  }
+  .given-optlbl{border:2px solid #1d4f91; border-radius:50%; padding:0 6px; color:#1d4f91; font-weight:bold;}
+
+  /* ===== Answer toggle button ===== */
+  .btnrow{display:flex; justify-content:flex-end; margin-top:10px;}
+  .ans-btn{
+    background:var(--gold); border:none; padding:6px 14px; font-weight:bold; cursor:pointer;
+    border-radius:4px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:.85em;
+  }
+  .ans-btn:hover{background:var(--maroon); color:#fff;}
+
+  /* ===== Images ===== */
+  .sandwich-img{max-width:50%; display:block; margin:14px auto;}
+  figure{margin:0;}
+  figcaption{font-style:italic; font-size:.82em; text-align:center; color:#555; margin-top:4px;}
+
+  /* ===== Reference notes (page/paragraph pointers) ===== */
+  .ref-note{font-size:.82em; color:#555; font-style:italic; margin:2px 0 0 0;}
+
+  /* ===== Writing Tip box ===== */
+  .writing-tip{border:2px solid #1a1a1a; margin:16px 0; background:#e3d2bf;}
+  .writing-tip .tip-head{background:#1a1a1a; color:#fff; font-weight:bold; padding:6px 12px; font-family:'Helvetica Neue',Arial,sans-serif;}
+  .writing-tip .tip-body{padding:12px 16px;}
+  .writing-tip .do-line{margin:6px 0;}
+  .writing-tip .tip-lbl{font-weight:bold; font-size:.85em; font-family:'Helvetica Neue',Arial,sans-serif; margin-right:6px;}
+
+  /* ===== Outline box (Practice 11 / Outlining example) ===== */
+  .outline-box{border:2px solid #1a1a1a; margin:14px 0; display:grid; grid-template-columns:150px 1fr;}
+  .outline-box .ol-lbl{background:#f2f2f2; border-right:1px solid #999; border-bottom:1px solid #ccd6ea; padding:8px 10px; font-size:.78em; font-weight:bold; font-family:'Helvetica Neue',Arial,sans-serif; color:var(--navy); text-align:right;}
+  .outline-box .ol-val{border-bottom:1px solid #ccd6ea; padding:8px 10px; color:#1d4f91; font-style:italic;}
+
+  p{line-height:1.55;}
+  ul,ol{line-height:1.55;}
+</style>
+</head>
+<body>
+
+<div id="topnav">
+  <span class="label">Sections:</span>
+  <a href="#sec-supporting">Supporting Sentences</a>
+  <a href="#sec-unity">Unity</a>
+  <a href="#sec-concluding">The Concluding Sentence</a>
+  <a href="#sec-outlining">Outlining</a>
+  <div class="sep"></div>
+  <span class="label">Pages:</span>
+  <div id="pagenav">
+    <a href="#page-47">47</a><a href="#page-48">48</a><a href="#page-49">49</a>
+    <a href="#page-50">50</a><a href="#page-51">51</a><a href="#page-52">52</a>
+    <a href="#page-53">53</a><a href="#page-54">54</a><a href="#page-55">55</a>
+    <a href="#page-56">56</a><a href="#page-57">57</a>
+  </div>
+</div>
+
+<div id="zoomctl">
+  <button id="zoomIn">A+</button>
+  <div id="zoomlabel">100%</div>
+  <button id="zoomOut">A−</button>
+  <div id="markctl">
+    <div class="divider"></div>
+    <button id="highlightBtn" class="mark-btn" title="Highlighter — select text to highlight it">🖊</button>
+    <button id="eraserBtn" class="mark-btn" title="Eraser — click a highlight to remove it">⌫</button>
+  </div>
+</div>
+
+<!-- ============ PAGE 47 ============ -->
+<div id="page-47"></div><span class="pagechip">PAGE 47</span>
+
+<div id="sec-supporting" class="section-bar">SUPPORTING SENTENCES</div>
+<p><strong>Supporting sentences</strong> follow the topic sentence in a paragraph. Supporting sentences explain or prove the ideas in the topic sentence. They are the "filling" in a paragraph "sandwich." The supporting sentences are the biggest part of a paragraph, just as the filling is the biggest part of a sandwich.</p>
+
+<figure>
+  <img class="sandwich-img" src="media/p47_final.png" alt="A sandwich diagram with an arrow labeled SUPPORTING SENTENCES pointing to the filling between the two slices of bread">
+</figure>
+
+<!-- ============ PAGE 48 ============ -->
+<div id="page-48"></div><span class="pagechip">PAGE 48</span>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 6</span>
+    <span class="practice-title">Supporting Sentences</span>
+  </div>
+  <div class="practice-body">
+    <div class="exwrap">
+      <p>Work alone or with a partner. Add supporting points for the topic sentences in Group 1 from Practice 3 on page 41. Write your points in the spaces provided. You may write phrases or sentences.</p>
+      <ol>
+        <li>Good roommates have four characteristics.
+          <ol type="a" style="margin-top:4px;">
+            <li><span class="given-text">are neat, tidy</span></li>
+            <li><span class="given-text">are cheerful</span></li>
+            <li><span class="given-text">share housework</span></li>
+            <li><span class="given-text">pay their share of the rent on time</span></li>
+          </ol>
+        </li>
+        <li>College students face many challenges.
+          <ol type="a" style="margin-top:4px;">
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">heavy coursework and exams</span></li>
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">balancing school with a part-time job</span></li>
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">being away from family for the first time</span></li>
+          </ol>
+        </li>
+        <li>Living with your parents has certain advantages.
+          <ol type="a" style="margin-top:4px;">
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">Rent and food are free.</span></li>
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">Parent does laundry and cleans room.</span></li>
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">Parents are available to give advice.</span></li>
+          </ol>
+        </li>
+        <li>Successful student athletes have several characteristics.
+          <ol type="a" style="margin-top:4px;">
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">very motivated</span></li>
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">organize time well</span></li>
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">work well on a team</span></li>
+          </ol>
+        </li>
+        <li>Small colleges are better than big universities for several reasons.
+          <ol type="a" style="margin-top:4px;">
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">There are fewer students, so it is easier to meet people.</span></li>
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">Classes are smaller.</span></li>
+            <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">It's easier to get to know your instructors.</span></li>
+          </ol>
+        </li>
+      </ol>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 49 ============ -->
+<div id="page-49"></div><span class="pagechip">PAGE 49</span>
+
+<div class="subhead2">Listing-Order Transition Signals</div>
+<p>To show readers that they are moving from one supporting idea to another, good writers use words or phrases known as <strong>transition signals</strong>. A transition signal alerts the reader that the writer is moving on to the next supporting idea. It also shows how the new supporting idea is related to the previous idea.</p>
+<p>In a listing-order paragraph, you can use transition signals such as <em>First</em>, <em>Second</em>, and <em>Third</em> to show the reader the order of the main points.</p>
+<p>Here are some transition signals that show listing order:</p>
+
+<table class="signals">
+  <tr><th colspan="2" style="text-align:center;">Listing-Order Transition Signals</th></tr>
+  <tr>
+    <td>First,<br>First of all,<br>Second,<br>Third,<br>In addition,<br>Also,<br>Finally,</td>
+    <td>. . . also . . .<br>. . . , also.</td>
+  </tr>
+</table>
+
+<p>Most listing-order transition signals come at the beginning of the sentence, followed by a comma.</p>
+<p style="margin-left:24px;"><strong>First,</strong> living in a foreign country helps you learn another language faster than studying it at school.<br>
+<strong>In addition,</strong> small colleges are friendlier, so new students make friends more quickly.<br>
+<strong>Also,</strong> studying is a popular library activity.</p>
+<p>The transition signal <em>also</em> is an exception. You can use it at the beginning of a sentence with a comma (as in the example above), but you can also use it with a verb (without a comma) or at the end of a sentence (preceded by a comma).</p>
+<p style="margin-left:24px;">Studying <u>is</u> <strong>also</strong> a popular library activity.<br>
+Students <strong>also</strong> <u>like</u> to study in the library.<br>
+Studying is a popular library activity<span class="given-text">,</span> <strong>also.</strong></p>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">EXTRA PRACTICE</span>
+    <span class="practice-title">Listing-Order Transition Signals — Find the Mistakes</span>
+  </div>
+  <div class="practice-body">
+    <div class="exwrap">
+      <p>Read the paragraph. It contains <strong>six mistakes</strong> with listing-order transition signals. Find and correct each mistake.</p>
+      <div style="background:#fdf6d8; padding:12px 16px;">
+        <p style="text-align:center;"><strong>Good Study Habits</strong></p>
+        <p>Successful students share several good study habits. <span class="err-wrong">First</span><span class="err-fix">First,</span> they review their class notes every day. <span class="err-wrong">Also</span><span class="err-fix">Also,</span> they read the assigned chapters before class, not after. <span class="err-wrong">Second</span><span class="err-fix">Second,</span> they form study groups to prepare for exams. <span class="err-wrong">In Addition,</span><span class="err-fix">In addition,</span> they ask their teachers questions when they don't understand something. They <span class="err-wrong">also, budget</span><span class="err-fix">also budget</span> time carefully so that they never fall behind. <span class="err-wrong">In short</span><span class="err-fix">In short,</span> good students plan ahead and stay organized.</p>
+      </div>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 50 ============ -->
+<div id="page-50"></div><span class="pagechip">PAGE 50</span>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 7</span>
+    <span class="practice-title">Listing-Order Transition Signals</span>
+  </div>
+  <div class="practice-body">
+
+    <div class="exwrap">
+      <p><strong>A</strong> Find the listing-order transition signals in the writing model on page 38. Then fill in the blanks.</p>
+      <ol>
+        <li>Transition signal for the first main point: <span class="given-text">First of all</span></li>
+        <li>Transition signal for the second main point: <span class="blank-ph blank-ph-line" style="max-width:260px;"></span><span class="ans-ph ans-ph-line">Second,</span></li>
+        <li>Transition signal for the third main point: <span class="blank-ph blank-ph-line" style="max-width:260px;"></span><span class="ans-ph ans-ph-line">Third,</span></li>
+        <li>What other listing-order transition signal appears in the model?<br><span class="blank-ph blank-ph-line" style="max-width:260px;"></span><span class="ans-ph ans-ph-line">also</span></li>
+      </ol>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+
+    <div class="exwrap">
+      <p><strong>B</strong> Complete the paragraph with listing-order transition signals. Add commas where needed. For some, there may be more than one answer.</p>
+      <div style="background:#fdf6d8; padding:12px 16px;">
+        <p style="text-align:center;"><strong>Kinds of Intelligence</strong><sup>1</sup></p>
+        <p>There are many kinds of intelligence. <span class="given-text">First,</span><sup class="num">1.</sup> there is mathematical-logical intelligence. People with this kind of intelligence become mathematicians, scientists, and engineers. <span class="blank-ph"></span><span class="ans-ph">Second,</span><sup class="num">2.</sup> there is linguistic<sup>2</sup> intelligence. People with linguistic intelligence are good at language, so many become musicians and writers. We are familiar with these first two kinds of intelligence, but other kinds are not so familiar. There are <span class="blank-ph"></span><span class="ans-ph">also</span><sup class="num">3.</sup> spatial intelligence and musical intelligence. Spatial intelligence is necessary for architects and artists, and musical intelligence is necessary for musicians. <span class="blank-ph"></span><span class="ans-ph">In addition,</span><sup class="num">4.</sup> there is kinesthetic<sup>3</sup> intelligence. Athletes and performers have kinesthetic intelligence. Personal intelligence is a kind of intelligence<span class="blank-ph"></span><span class="ans-ph">, also</span><sup class="num">5.</sup>. People with personal intelligence manage people well, so they become leaders of society. In short, there is more than one way to be smart.</p>
+        <p style="font-size:.8em; margin-top:10px;"><sup>1</sup> This paragraph is based on the work of Howard Gardner, a professor at the Harvard Graduate School of Education.<br><sup>2</sup> <strong>linguistic:</strong> related to language<br><sup>3</sup> <strong>kinesthetic:</strong> related to movement of the human body</p>
+      </div>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ PAGE 51 ============ -->
+<div id="page-51"></div><span class="pagechip">PAGE 51</span>
+
+<div id="sec-unity" class="subhead2">Unity</div>
+<p>Unity is an important characteristic of a well-written paragraph. When a paragraph has unity, all the sentences in it are about one main idea. Another way of saying this is that all the supporting sentences must be <strong>relevant</strong>, which means "directly related to the main idea." For example, if your paragraph is about your mother's good cooking, a sentence such as <em>My sister is also a good cook</em> is <strong>irrelevant</strong> (that is, not relevant) because the paragraph is about your mother, not your sister. When you write a paragraph, make sure that all of your supporting sentences are relevant.</p>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 8</span>
+    <span class="practice-title">Editing for Unity</span>
+  </div>
+  <div class="practice-body">
+    <p>Work alone or with a partner. Each paragraph contains two irrelevant sentences. Circle the topic and underline the controlling idea in each topic sentence. Then draw a line through each irrelevant sentence.</p>
+
+    <div class="exwrap">
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 1</div>
+      <p style="text-align:center;"><strong>Boston</strong></p>
+      <p><span class="given-topic">Boston</span> <span class="given-ci">is one of the most popular U.S. cities with college students.</span> There are two main reasons for this. First, students enjoy being in a city that is full of other college students. The Boston area has over 50 colleges and universities, including Boston University, Massachusetts Institute of Technology, and Harvard University. <span class="given-irrelevant">The Charles River, between Boston and Cambridge, is famous for boating and races.</span> Because of the large number of college students, there are many events and activities in the city every day. Second, Boston has the feel of a big city, but it's really rather small. It is quite convenient for students to get around using public transportation. It is very easy for students to become familiar with the city and feel comfortable. There are many friendly neighborhoods near the colleges, and students usually feel welcomed. <span class="t-irrelevant">However, some Boston residents complain about noisy or irresponsible college students.</span> It's no surprise that people regard Boston as one of the top U.S. college towns.</p>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+
+    <!-- ============ PAGE 52 ============ -->
+    <div id="page-52"></div><span class="pagechip">PAGE 52</span>
+
+    <div class="exwrap">
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 2</div>
+      <p style="text-align:center;"><strong>Nurses</strong></p>
+      <p><span class="t-topic">Good nurses</span> <span class="t-ci">should have at least five characteristics.</span> First, they must be caring. They must show genuine concern for sick, injured, or frightened people. Second, nurses must be extremely organized. If a nurse forgets to give a patient his or her medicine on time, the consequences could be serious. Third, nurses must be quite calm. They may have to make a life-and-death decision in an emergency, and it's clear that calm people make better decisions than anxious people. <span class="t-irrelevant">Doctors also need to stay calm in emergencies.</span> In addition, nurses should be physically strong because nursing requires a lot of hard physical work. Finally, they must be intelligent enough to learn difficult subjects such as chemistry and psychology and to operate the complex equipment used in hospitals today. <span class="t-irrelevant">There is a shortage of nurses today, so they earn good salaries.</span> In brief, nursing is a profession for people who are caring, organized, calm, strong, and intelligent.</p>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+
+    <div class="exwrap">
+      <div class="subhead" style="text-transform:uppercase; margin-top:18px;">Paragraph 3 <span style="font-weight:normal; font-style:italic; color:#555;">(Extra Paragraph)</span></div>
+      <p style="text-align:center;"><strong>Home-Cooked Meals</strong></p>
+      <p><span class="t-topic">Eating home-cooked meals</span> <span class="t-ci">offers several benefits.</span> First, home-cooked meals are usually healthier because you control the ingredients, so you can avoid excess salt, sugar, and oil. Second, cooking at home is generally cheaper than eating at restaurants, since you buy ingredients in bulk and avoid paying for service. <span class="t-irrelevant">Many popular restaurants require reservations weeks in advance.</span> Third, preparing meals at home allows families to spend time together, since cooking and eating can become a shared daily activity. <span class="t-irrelevant">My uncle owns a small restaurant near the train station.</span> In addition, home cooking lets you try new recipes and flavors from different cultures at your own pace. <span class="t-irrelevant">Some kitchen knives are more expensive than others.</span> In short, home-cooked meals are healthier, more affordable, and bring families closer together.</p>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+
+  </div>
+</div>
+
+<div id="sec-concluding" class="subhead2">The Concluding Sentence</div>
+<p>Paragraphs that stand alone (that is, paragraphs that are not part of a longer composition) often end with a <strong>concluding sentence</strong>. A concluding sentence signals the close of the paragraph to the reader.</p>
+
+<figure>
+  <img class="sandwich-img" src="media/p52_final.png" alt="A sandwich diagram with an arrow labeled CONCLUDING SENTENCE pointing to the bottom slice of bread">
+</figure>
+
+<!-- ============ PAGE 53 ============ -->
+<div id="page-53"></div><span class="pagechip">PAGE 53</span>
+
+<p>Here are several points to keep in mind about concluding sentences:</p>
+<ul>
+  <li>Sometimes a concluding sentence reminds the reader of the main point by restating the topic sentence in different words.
+    <p style="margin-left:24px; margin-top:6px;">In short, there are several types of college degrees in the United States.<br><span class="ref-note">(see page 46, Paragraph 1)</span></p>
+    <p style="margin-left:24px;">It's no surprise that people regard Boston as one of the top U.S. college towns.<br><span class="ref-note">(see page 51, Paragraph 1)</span></p>
+  </li>
+  <li>Sometimes a concluding sentence summarizes the main points.
+    <p style="margin-left:24px; margin-top:6px;">To summarize, employers look for dependable, responsible team players.<br><span class="ref-note">(see page 45, Paragraph 4)</span></p>
+    <p style="margin-left:24px;">In brief, nursing is a profession for people who are caring, organized, calm, strong, and intelligent.<br><span class="ref-note">(see page 52, Paragraph 2)</span></p>
+  </li>
+  <li>Writers often use a <strong>conclusion signal</strong> to show their readers that this is the end of the paragraph. The chart lists several conclusion signals. Notice that there is always a comma after a conclusion signal.</li>
+</ul>
+
+<table class="signals">
+  <tr><th colspan="3" style="text-align:center;">Conclusion Signals</th></tr>
+  <tr>
+    <td>To conclude,<br>In conclusion,</td>
+    <td>To sum up,<br>To summarize,<br>In summary,</td>
+    <td>In brief,<br>In short,<br>Indeed,</td>
+  </tr>
+</table>
+
+<div class="writing-tip">
+  <div class="tip-head">Writing Tip <span style="font-weight:normal; font-size:.85em;">— refers to the writing model on page 38 ("Good Flight Attendants")</span></div>
+  <div class="tip-body">
+    <p style="margin:0 0 8px 0;">Never introduce a new idea in your concluding sentence. Instead, review or repeat the ideas you have already discussed.</p>
+    <p class="do-line"><span class="tip-lbl">DO THIS:</span> In short, good flight attendants are friendly, self-confident, and strong.</p>
+    <p class="do-line"><span class="tip-lbl">DO NOT DO THIS:</span> Also, good flight attendants love to travel.</p>
+    <p class="do-line" style="margin-left:70px;">OR</p>
+    <p class="do-line" style="margin-left:70px;">In conclusion, I hope to become a good flight attendant some day.</p>
+  </div>
+</div>
+
+<!-- ============ PAGE 54 ============ -->
+<div id="page-54"></div><span class="pagechip">PAGE 54</span>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 9</span>
+    <span class="practice-title">Choosing Concluding Sentences</span>
+  </div>
+  <div class="practice-body">
+    <p>Read the paragraphs. Circle the letter of the best concluding sentence for each one, and write it on the line.</p>
+
+    <div class="exwrap">
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 1</div>
+      <p style="background:#fdf6d8; padding:10px 14px;">There are two reasons I love big cities. First of all, big cities are alive 24 hours a day. You can go shopping, see a movie, exercise at a gym, get something to eat, or go roller skating at any time of the day or night. Second, in big cities you are free to do whatever you like. No one watches your daily comings and goings. You can stay out all night or stay home all day, and no one will judge you. <span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line">To sum up, I love big cities because you can be independent.</span></p>
+      <div class="opts">
+        <p class="optline"><span class="optlbl correct-opt">a.</span> To sum up, I love big cities because you can be independent.</p>
+        <p class="optline"><span class="optlbl">b.</span> In short, big cities attract me because there are so many things to do.</p>
+        <p class="optline"><span class="optlbl">c.</span> In brief, I like big cities because of their energy and freedom.</p>
+      </div>
+
+      <div class="subhead" style="text-transform:uppercase; margin-top:18px;">Paragraph 2</div>
+      <p style="background:#fdf6d8; padding:10px 14px;">There are two reasons I hate big cities. First of all, big cities are noisy 24 hours a day. You can hear horns honking, traffic roaring, music blaring, and people talking at all hours. It is never quiet in a big city. Second, there is no feeling of community in big cities. No one knows or cares about you. Neighbors who have lived next door to each other for many years don't even know each others' names. That can make life extremely lonely. <span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line">In brief, big cities are noisy, lonely places to live.</span></p>
+      <div class="opts">
+        <p class="optline"><span class="optlbl correct-opt">a.</span> In brief, big cities are noisy, lonely places to live.</p>
+        <p class="optline"><span class="optlbl">b.</span> In conclusion, I prefer to live in a small town, where it is quieter and people are friendlier.</p>
+        <p class="optline"><span class="optlbl">c.</span> Also, big cities have a lot of crime.</p>
+      </div>
+
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Answers</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 55 ============ -->
+<div id="page-55"></div><span class="pagechip">PAGE 55</span>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 10</span>
+    <span class="practice-title">Writing Concluding Sentences</span>
+  </div>
+  <div class="practice-body">
+
+    <div class="exwrap">
+      <p><strong>A</strong> Read the paragraphs. Write a concluding sentence for each one.</p>
+
+      <div class="subhead" style="text-transform:uppercase;">Paragraph 1</div>
+      <p style="background:#fdf6d8; padding:10px 14px;">Successful young fashion designers usually have three characteristics. First of all, they must be very creative. They must use their artistic abilities and their knowledge of textiles and colors. Second, they must be willing to work hard over a long period of time. Usually, young fashion designers start out as poorly paid assistants or as unpaid interns. They must work many long hours for little or no pay to learn the needed skills. Finally, successful young fashion designers must be well-organized and understand the importance of building an outstanding portfolio. A portfolio is a large folder with sketches, photos, and samples of a designer's work. It is visual proof of a designer's talent, vision, and accomplishments. <span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">In summary, successful young fashion designers are creative, hard-working, and have excellent portfolios.</span></p>
+
+      <div class="subhead" style="text-transform:uppercase; margin-top:18px;">Paragraph 2</div>
+      <p style="background:#fdf6d8; padding:10px 14px;">I find that being a computer salesperson is a very rewarding job. First, my job allows me to meet many different types of people. I like this because I'm an outgoing person, and I enjoy talking with people and finding out about them. Second, my job requires me to problem-solve and find creative ways to meet my customers' needs. I find it satisfying to figure out which of my company's products are best for my clients. Third, the job requires me to learn about new developments in my field. I find this part of the job satisfying because I like staying informed, and I love the challenge of learning new things. <span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">In conclusion, I like being a salesperson because I enjoy working with people, solving problems, and learning new things.</span></p>
+
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+    </div>
+
+    <div class="exwrap">
+      <p><strong>B</strong> In Practice 6 on page 48, you wrote supporting ideas for five topic sentences. Now, write a concluding sentence for each topic. Use a different conclusion signal for each.</p>
+      <ol>
+        <li><span class="given-text">To sum up, neatness, cheerfulness, helpfulness, and financial responsibility are qualities of good roommates.</span></li>
+        <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">To summarize, college students face many academic and personal challenges.</span></li>
+        <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">In brief, living with your parents has several advantages.</span></li>
+        <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">In short, successful student athletes share several key characteristics.</span></li>
+        <li><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">Indeed, small colleges offer several advantages over big universities.</span></li>
+      </ol>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ PAGE 56 ============ -->
+<div id="page-56"></div><span class="pagechip">PAGE 56</span>
+
+<div id="sec-outlining" class="section-bar">OUTLINING</div>
+<p>In the Prewriting section of this chapter (pages 35–36), you saw how clustering helps you get ideas about a topic. Once you have your ideas, you can use another prewriting technique known as <strong>outlining</strong> to help you organize them.</p>
+<p>Here is the outline created from the edited cluster about good flight attendants on page 36:</p>
+
+<div class="outline-box">
+  <div class="ol-lbl">TITLE</div><div class="ol-val">Good Flight Attendants</div>
+  <div class="ol-lbl">TOPIC SENTENCE</div><div class="ol-val">Good flight attendants have three important characteristics.</div>
+  <div class="ol-lbl">1ST MAIN POINT</div><div class="ol-val">A. Friendly</div>
+  <div class="ol-lbl">2ND MAIN POINT</div><div class="ol-val">B. Self-confident</div>
+  <div class="ol-lbl">3RD MAIN POINT</div><div class="ol-val">C. Physically strong</div>
+  <div class="ol-lbl">CONCLUDING SENTENCE</div><div class="ol-val">In short, good flight attendants are friendly, self-confident, and strong.</div>
+</div>
+
+<!-- ============ PAGE 57 ============ -->
+<div id="page-57"></div><span class="pagechip">PAGE 57</span>
+
+<p>To create the outline, the writer took the three main characteristics that he identified in his cluster and wrote them down in the order that he wanted to write about them. He labeled these A, B, and C. To complete the outline, he added a topic sentence and a concluding sentence.</p>
+
+<div class="writing-tip">
+  <div class="tip-head">Writing Tip</div>
+  <div class="tip-body">
+    <p style="margin:0;">When you make an outline, try to make the main points (A, B, C, and so on) grammatically the same—all adjectives, all nouns, all verb phrases, or all sentences.</p>
+  </div>
+</div>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">PRACTICE 11</span>
+    <span class="practice-title">Outlining</span>
+  </div>
+  <div class="practice-body">
+    <div class="exwrap">
+      <p>Use your cluster in Practice 1 on page 37 to complete the outline. Find three main points and fill in the A, B, and C blanks. Then add a title, a topic sentence, and the concluding sentence.</p>
+
+      <div class="outline-box">
+        <div class="ol-lbl">TITLE</div><div class="ol-val"><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">Good Elementary School Teachers</span></div>
+        <div class="ol-lbl">TOPIC SENTENCE</div><div class="ol-val"><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">Good elementary school teachers have three important qualities.</span></div>
+        <div class="ol-lbl">1ST MAIN POINT</div><div class="ol-val">A. <span class="blank-ph"></span><span class="ans-ph model-style">Patient</span></div>
+        <div class="ol-lbl">2ND MAIN POINT</div><div class="ol-val">B. <span class="blank-ph"></span><span class="ans-ph model-style">Creative</span></div>
+        <div class="ol-lbl">3RD MAIN POINT</div><div class="ol-val">C. <span class="blank-ph"></span><span class="ans-ph model-style">Caring</span></div>
+        <div class="ol-lbl">CONCLUDING SENTENCE</div><div class="ol-val"><span class="blank-ph blank-ph-line"></span><span class="ans-ph ans-ph-line model-style">In short, good elementary school teachers are patient, creative, and caring.</span></div>
+      </div>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="practice">
+  <div class="practice-head">
+    <span class="practice-tag">TRY IT OUT!</span>
+    <span class="practice-title">Writing the Paragraph</span>
+  </div>
+  <div class="practice-body">
+    <div class="exwrap">
+      <p>On a separate sheet of paper, write a paragraph using the outline you created in Practice 11. Use the writing model on page 38 as a guide. Follow these directions:</p>
+      <ol>
+        <li>Follow your outline as you write your draft.</li>
+        <li>Add details to support each characteristic or ability. Write two or three sentences for each main point.</li>
+        <li>Use a variety of intensifiers.</li>
+        <li>Introduce each main point with a listing-order transition signal.</li>
+        <li>Proofread your paragraph and correct any mistakes.</li>
+      </ol>
+      <div class="btnrow"><button class="ans-btn" onclick="toggleReveal(this)">Show Model Answer</button></div>
+      <div class="ans-ph" style="display:none;">
+        <p style="background:#fdf6d8; padding:12px 16px; margin-top:10px; font-weight:normal; color:var(--ink);"><strong>Good Elementary School Teachers</strong><br>Good elementary school teachers have three important qualities. First of all, they are very patient. They understand that young children need extra time to learn new skills, and they never get angry when a child makes a mistake. Second, good elementary school teachers are extremely creative. They plan fun activities and games that make learning enjoyable. They also decorate their classrooms with colorful posters and student artwork. Third, good elementary school teachers are especially caring. They notice when a student is having a difficult day, and they take the time to offer encouragement and support. In short, good elementary school teachers are patient, creative, and caring.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleReveal(btn){
+  const box = btn.closest('.exwrap');
+  box.classList.toggle('revealed');
+  const revealed = box.classList.contains('revealed');
+  if(btn.textContent.indexOf('Model Answer') !== -1){
+    btn.textContent = revealed ? 'Hide Model Answer' : 'Show Model Answer';
+  } else {
+    btn.textContent = revealed ? 'Hide Answers' : 'Show Answers';
+  }
+  const modelAns = box.querySelector(':scope > .ans-ph[style*="display:none"], :scope > .ans-ph[style*="display: none"]');
+  if(modelAns){
+    modelAns.style.display = revealed ? 'block' : 'none';
+  }
+}
+function toggleTarget(targetId, btn){
+  const box = document.getElementById(targetId);
+  box.classList.toggle('revealed');
+  const revealed = box.classList.contains('revealed');
+  btn.textContent = revealed ? 'Hide Answers' : 'Show Answers';
+}
+let zoomLevel = 1;
+function applyZoom(){
+  document.body.style.setProperty('--zoom', zoomLevel);
+  document.getElementById('zoomlabel').textContent = Math.round(zoomLevel*100) + '%';
+}
+document.getElementById('zoomIn').addEventListener('click', ()=>{
+  zoomLevel = Math.min(2, +(zoomLevel + 0.1).toFixed(2));
+  applyZoom();
+});
+document.getElementById('zoomOut').addEventListener('click', ()=>{
+  zoomLevel = Math.max(0.6, +(zoomLevel - 0.1).toFixed(2));
+  applyZoom();
+});
+
+/* ===== Highlighter / Eraser ===== */
+let highlightMode = false;
+let eraseMode = false;
+const highlightBtn = document.getElementById('highlightBtn');
+const eraserBtn = document.getElementById('eraserBtn');
+
+function setHighlightMode(on){
+  highlightMode = on;
+  if(on) eraseMode = false;
+  highlightBtn.classList.toggle('active', highlightMode);
+  eraserBtn.classList.toggle('active', eraseMode);
+  document.body.classList.toggle('highlight-mode', highlightMode);
+  document.body.classList.toggle('erase-mode', eraseMode);
+}
+function setEraseMode(on){
+  eraseMode = on;
+  if(on) highlightMode = false;
+  eraserBtn.classList.toggle('active', eraseMode);
+  highlightBtn.classList.toggle('active', highlightMode);
+  document.body.classList.toggle('erase-mode', eraseMode);
+  document.body.classList.toggle('highlight-mode', highlightMode);
+}
+highlightBtn.addEventListener('click', ()=> setHighlightMode(!highlightMode));
+eraserBtn.addEventListener('click', ()=> setEraseMode(!eraseMode));
+
+function wrapRangeInHighlight(range){
+  const mark = document.createElement('mark');
+  mark.className = 'user-highlight';
+  try{
+    range.surroundContents(mark);
+  }catch(e){
+    const contents = range.extractContents();
+    mark.appendChild(contents);
+    range.insertNode(mark);
+  }
+}
+
+document.addEventListener('mouseup', ()=>{
+  if(!highlightMode) return;
+  const sel = window.getSelection();
+  if(!sel || sel.rangeCount === 0 || sel.isCollapsed) return;
+  const anchorEl = sel.anchorNode && sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement;
+  if(anchorEl && (anchorEl.closest('#topnav') || anchorEl.closest('#zoomctl'))) return;
+  const range = sel.getRangeAt(0);
+  if(range.collapsed) return;
+  wrapRangeInHighlight(range);
+  sel.removeAllRanges();
+});
+
+document.addEventListener('click', (e)=>{
+  if(!eraseMode) return;
+  const mark = e.target.closest('mark.user-highlight');
+  if(!mark) return;
+  const parent = mark.parentNode;
+  while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+  parent.removeChild(mark);
+  parent.normalize();
+});
+</script>
+</body>
+</html>
