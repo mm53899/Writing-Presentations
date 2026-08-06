@@ -20,21 +20,23 @@
   }
   .content {
     padding: 60px 60px 80px 70px;
-    max-width: 780px;
+    max-width: 1100px;
   }
   h1 {
     font-family: 'Arial Black', Arial, sans-serif;
     font-weight: 900;
     letter-spacing: 2px;
-    font-size: 2.6em;
+    font-size: 3.4em;
     color: #386a94;
     margin: 0 0 8px 0;
     text-transform: uppercase;
+    white-space: nowrap;
   }
   .subtitle {
-    font-size: 1.15em;
+    font-size: 1.6em;
     color: #444;
     margin: 0 0 50px 0;
+    white-space: nowrap;
   }
   ul {
     list-style: none;
@@ -42,12 +44,20 @@
     padding: 0;
   }
   li {
-    margin-bottom: 42px;
+    margin-bottom: 0;
   }
   a.entry {
     display: block;
     text-decoration: none;
     color: inherit;
+    padding: 22px 0;
+    border-bottom: 1px solid #dde3ea;
+  }
+  li:first-child a.entry {
+    border-top: 1px solid #dde3ea;
+  }
+  a.entry:hover {
+    background: #f4f7fa;
   }
   .row {
     display: flex;
@@ -56,19 +66,16 @@
   }
   .num {
     font-weight: 800;
-    font-size: 1.3em;
+    font-size: 2.6em;
     color: #1a1a1a;
-    min-width: 32px;
+    min-width: 76px;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
   }
   .entry-title {
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 2.8em;
     color: #386a94;
-  }
-  .entry-desc {
-    margin: 4px 0 0 56px;
-    font-size: 1em;
-    color: #333;
   }
   a.entry:hover .entry-title {
     text-decoration: underline;
@@ -78,7 +85,7 @@
 <body>
 <div class="sidebar"></div>
 <div class="content">
-  <h1>Table of Contents</h1>
+  <h1>Presentations</h1>
   <p class="subtitle">M5/2 Writing (Longman Academic Writing Series 2)</p>
   <ul>
     <li>
@@ -87,7 +94,6 @@
           <span class="num">01</span>
           <span class="entry-title">Chapter 2, Pages 35–47</span>
         </div>
-        <div class="entry-desc">Analyzing the model, organization, and sentence structure practice</div>
       </a>
     </li>
     <li>
@@ -96,7 +102,6 @@
           <span class="num">02</span>
           <span class="entry-title">Chapter 2, Pages 47–57</span>
         </div>
-        <div class="entry-desc">Editing practice and writing assignment</div>
       </a>
     </li>
   </ul>
