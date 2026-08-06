@@ -2,21 +2,104 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Longman Academic Writing Series 2 — Presentations</title>
+<title>M5/2 Writing (Longman Academic Writing Series 2)</title>
 <style>
-  body { font-family: Georgia, 'Times New Roman', serif; max-width: 700px; margin: 60px auto; padding: 0 20px; color: #222; }
-  h1 { font-size: 1.6em; border-bottom: 2px solid #1d4f91; padding-bottom: 10px; }
-  ul { list-style: none; padding: 0; }
-  li { margin: 14px 0; }
-  a { display: block; padding: 14px 18px; background: #f4f6fb; border-left: 4px solid #1d4f91; text-decoration: none; color: #1d4f91; font-size: 1.1em; border-radius: 4px; }
-  a:hover { background: #e8ecf7; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+    display: flex;
+    min-height: 100vh;
+  }
+  .sidebar {
+    width: 110px;
+    background: #386a94;
+    flex-shrink: 0;
+  }
+  .content {
+    padding: 60px 60px 80px 70px;
+    max-width: 780px;
+  }
+  h1 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 2.6em;
+    color: #386a94;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    font-size: 1.15em;
+    color: #444;
+    margin: 0 0 50px 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 42px;
+  }
+  a.entry {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .row {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+  }
+  .num {
+    font-weight: 800;
+    font-size: 1.3em;
+    color: #1a1a1a;
+    min-width: 32px;
+  }
+  .entry-title {
+    font-weight: 700;
+    font-size: 1.4em;
+    color: #386a94;
+  }
+  .entry-desc {
+    margin: 4px 0 0 56px;
+    font-size: 1em;
+    color: #333;
+  }
+  a.entry:hover .entry-title {
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
-<h1>Longman Academic Writing Series 2</h1>
-<ul>
-<li><a href="Assets/Longman_Ch2_p35-47/Longman_Ch2_p35-47.html">Chapter 2, pages 35–47</a></li>
-<li><a href="Assets/Longman_Ch2_p47-57/Longman_Ch2_p47-57.html">Chapter 2, pages 47–57</a></li>
-</ul>
+<div class="sidebar"></div>
+<div class="content">
+  <h1>Table of Contents</h1>
+  <p class="subtitle">M5/2 Writing (Longman Academic Writing Series 2)</p>
+  <ul>
+    <li>
+      <a class="entry" href="Assets/Longman_Ch2_p35-47/Longman_Ch2_p35-47.html">
+        <div class="row">
+          <span class="num">01</span>
+          <span class="entry-title">Chapter 2, Pages 35–47</span>
+        </div>
+        <div class="entry-desc">Analyzing the model, organization, and sentence structure practice</div>
+      </a>
+    </li>
+    <li>
+      <a class="entry" href="Assets/Longman_Ch2_p47-57/Longman_Ch2_p47-57.html">
+        <div class="row">
+          <span class="num">02</span>
+          <span class="entry-title">Chapter 2, Pages 47–57</span>
+        </div>
+        <div class="entry-desc">Editing practice and writing assignment</div>
+      </a>
+    </li>
+  </ul>
+</div>
 </body>
 </html>
